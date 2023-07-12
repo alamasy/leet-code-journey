@@ -4,18 +4,20 @@ twoSum([3, 3], 6); // expected output [0,1]
 
 // Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
 
-function twoSum(nums, target) {
+function twoSum(numbers, treshold) {
   let temp = 0;
-  const res = [];
+  const result = [];
 
-  for (let i = 0; i < nums.length; i++) {
-    const num = nums[i];
-    if (num + temp === target) {
-      res.push(i - 1);
-      res.push(i);
+  for (let i = 0; i < numbers.length; i++) {
+    const number = numbers[i];
+
+    if (temp + number === treshold) {
+      result.push(i - 1);
+      result.push(i);
     }
 
-    temp = num;
+    temp = number;
   }
-  return res;
+
+  console.log(result);
 }
